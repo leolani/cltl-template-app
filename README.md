@@ -7,6 +7,10 @@
 ## Quick start
 
 To run a simple Hello World! application
+- clone this repository including all submodules with
+
+      git clone --recurse-submodules https://github.com/leolani/cltl-template-app.git <YOUR FOLDER NAME>
+
 - run `make build` from the root directory of the repository (twice),
 - change to the *app/* directory and activate the virutal environment created by the previous step with
 
