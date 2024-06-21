@@ -2,11 +2,15 @@
 
 ## Applicaton
 
-< FLOW CHART OF THE APP >
+This repository contains a minimal "Hello World" application using the Leolani framework. It consists of a browser based
+Chat UI for text in- and output and a simple processing component that answers to text input with a "Hello world!" message.
+The diagram below visualizes the event flow in the application.
+
+![Chat UI - text_in -> HelloWorldService - text_out -> Chat UI](doc/HelloWorld.drawio.png)
 
 ## Quick start
 
-To run a simple Hello World! application
+To run the simple Hello World! application
 - clone this repository including all submodules with
 
       git clone --recurse-submodules https://github.com/leolani/cltl-template-app.git <YOUR FOLDER NAME>
@@ -26,7 +30,29 @@ To run a simple Hello World! application
 
 ## Applicaton structure
 
-Describe repository content (folder structure)
+The application is sturctured as follows:
+
+- Existing components are included as Git submodules in the repository. This are
+  * [cltl-chat-ui] the graphical user interface for having a chat dialogue
+  * [cltl-combot] shared code and representations
+  * [cltl-emissor-data] data elements for representing signals in EMISSOR
+  * [emissor] storing signals as sequence data in scenarios and temporal containers
+- Requirements of the application are centraly defined in [cltl-requirements]
+- Utilities used to build the application are contained in util/
+- Code specific to the application itself is contained in app/
+  - src/
+  - py-app/
+  - py-app/config
+  - py-app/storage
+
+In this setup, all components are run in a single python app, namely *app/py-app/app.py*. To set up a
+virtual environment for this application we provide build tooling which creates a virtual environment
+in *app/venv* that contains all the necessary dependencies by building and installing Python packages
+for all included components and external dependencies. This can be done by running
+
+    make build
+
+in the root of the repository.
 
 ## EMISSOR
 
