@@ -30,22 +30,22 @@ To run the simple Hello World! application
 
 ## Applicaton structure
 
-The application is sturctured as follows:
+The application is structured as follows:
 
-- Existing components are included as Git submodules in the repository. This are
-  * [cltl-chat-ui] the graphical user interface for having a chat dialogue
-  * [cltl-combot] shared code and representations
-  * [cltl-emissor-data] data elements for representing signals in EMISSOR
-  * [emissor] storing signals as sequence data in scenarios and temporal containers
-- Requirements of the application are centraly defined in [cltl-requirements]
-- Utilities used to build the application are contained in util/
-- Code specific to the application itself is contained in app/
-  - src/
-  - py-app/
-  - py-app/config
-  - py-app/storage
+- **Existing components** are included as Git submodules in the repository. These are
+  * _cltl-chat-ui/_ the graphical user interface for having a chat dialogue,
+  * _cltl-combot/_ shared code and representations,
+  * _cltl-emissor-data/_ recording interaction data in EMISSOR format,
+  * _emissor/_ EMISSOR library
+- **Requirements** of the application are centraly defined in _cltl-requirements/_
+- **Build utilities** to build the application are contained in _util/_
+- **Application specific code** is contained in _app/_
+  - _src/_ contains additional source code
+  - _py-app/_ contains the main Python application
+  - _py-app/config/_ contains configuration for the main application
+  - _py-app/storage/_ contains stored interaction and application data
 
-In this setup, all components are run in a single python app, namely *app/py-app/app.py*. To set up a
+In this setup, all components are run in a single Python app, namely *app/py-app/app.py*. To set up a
 virtual environment for this application we provide build tooling which creates a virtual environment
 in *app/venv* that contains all the necessary dependencies by building and installing Python packages
 for all included components and external dependencies. This can be done by running
@@ -56,9 +56,8 @@ in the root of the repository.
 
 ## EMISSOR
 
-The application collects interaction data in EMISSOR format.
-There is a single scenario created in *app/py-app/app.py*
-for each run of the application.
+The application collects interaction data in [EMISSOR](https://github.com/leolani/emissor) format.
+There is a single scenario created in *app/py-app/storage/emissor* for each run of the application.
 
 ## Build your own application
 
